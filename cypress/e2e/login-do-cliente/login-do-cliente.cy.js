@@ -1,6 +1,8 @@
 describe('Página de login', () => {
   beforeEach(() => {
     cy.visit('https://www.saucedemo.com/');
+    // A asserção verifica se o container do login está visível
+    cy.get('[data-test="login-container"]').should('be.visible');
   })
 
   //Login com usuário e senha válidos
