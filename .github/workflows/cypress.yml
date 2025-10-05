@@ -1,4 +1,4 @@
-name: Cypress E2E Processo de compra (Portfólio)
+name: Cypress E2E Processo de Compra (Portfólio)
 
 on: [push] # O pipeline executa a cada novo push
 
@@ -15,13 +15,12 @@ jobs:
         run: npm install
 
       - name: Rodar Testes e Gravar no Cypress Cloud
-        # Utiliza a ação oficial do Cypress
         uses: cypress-io/github-action@v6
         with:
-          # Comando para rodar a suíte (usa o script definido: 'cypress run')
+          # Comando para rodar a suíte (usa o script definido: 'npm run cy:run')
           command: npm run cy:run 
-          # OBS: Linhas 'start' e 'wait-on' foram removidas.
+          record: true # Ativa a gravação para o portfólio
         env:
-          # Passa a chave secreta de forma segura
+          # Passa a chave secreta de forma segura (4 espaços de indentação aqui)
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
