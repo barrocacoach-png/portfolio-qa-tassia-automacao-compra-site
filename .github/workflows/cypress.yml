@@ -1,0 +1,28 @@
+name: Cypress E2E Processo de compra (Portfólio)
+
+on: [push] # O pipeline executa a cada novo push
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Código
+        # Baixa o código do seu repositório Git
+        uses: actions/checkout@v4
+
+      - name: Instalar Dependências
+        # Instala o Node.js e todas as dependências listadas no package.json
+        run: npm install
+
+      - name: Rodar Testes e Gravar no Cypress Cloud
+        # Utiliza a ação oficial do Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          # Comando para rodar a suíte (usa o script definido: 'cypress run')
+          command: npm run cy:run 
+          record: true # Mantém a gravação para o portfólio
+          # OBS: Linhas 'start' e 'wait-on' foram removidas.
+        env:
+          # Passa a chave secreta de forma segura
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
