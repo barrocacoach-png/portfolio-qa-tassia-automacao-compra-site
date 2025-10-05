@@ -20,7 +20,6 @@ jobs:
         with:
           # Comando para rodar a suíte (usa o script definido: 'cypress run')
           command: npm run cy:run 
-          record: true # Mantém a gravação para o portfólio
           # OBS: Linhas 'start' e 'wait-on' foram removidas.
         env:
           # Passa a chave secreta de forma segura
