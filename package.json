@@ -1,15 +1,26 @@
 {
   "name": "cypress-processo-de-compra",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portfólio de automação de testes End-to-End com Cypress.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run cy:run",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "report:merge": "mochawesome-merge cypress/results/*.json > cypress/reports/report-merged.json",
+    "report:generate": "marge cypress/reports/report-merged.json -f report-final -o cypress/reports --inline"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cypress",
+    "qa",
+    "automacao"
+  ],
+  "author": "Tássia Barroca",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^15.2.0"
+    "cypress": "^15.2.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.3.0"
   }
 }
