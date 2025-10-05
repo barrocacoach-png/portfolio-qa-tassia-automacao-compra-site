@@ -1,6 +1,7 @@
 describe('Página de produtos', () => {
   beforeEach(() => {
     cy.login();
+  });
 
     // ------------------------------------------------------
     //Ordenando produtos pelo nome de A-Z (seleção pelo valor do atributo)
@@ -86,4 +87,3 @@ describe('Página de produtos', () => {
       });
     });
   });
-});
