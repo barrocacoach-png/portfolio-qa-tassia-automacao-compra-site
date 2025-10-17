@@ -8,7 +8,7 @@ Este repositório contém a automação dos testes end-to-end do processo de com
 - **JavaScript**: Linguagem utilizada nos scripts de teste.
 - **Node.js**: Ambiente de execução para o Cypress e gerenciamento de dependências.
 - **Git**: Controle de versão do projeto.
-- **VS Code** (opcional): Editor recomendado para desenvolvimento e manutenção dos testes.
+- **VS Code**: Editor para desenvolvimento e manutenção dos testes.
 
 ## Estrutura do Projeto
 
